@@ -108,6 +108,9 @@ main .calculator-container .calculator .number-operator-container button:hover {
 main .calculator-container .calculator .number-operator-container button:active {
   color: red;
 }
+main .calculator-container .calculator .number-operator-container .symbol {
+  background-color: #FF8F1F;
+}
 
 footer {
   background-color: rgb(33, 30, 30);
