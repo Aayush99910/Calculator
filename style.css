@@ -44,6 +44,12 @@ main .calculator-container .calculator .clear-delete-container {
   padding: 8px 0px;
   margin-top: 8px;
 }
+main .calculator-container .calculator .clear-delete-container #clear {
+  background-color: #5AA8CA;
+}
+main .calculator-container .calculator .clear-delete-container #delete {
+  background-color: #D21B47;
+}
 main .calculator-container .calculator .clear-delete-container #clear,
 main .calculator-container .calculator .clear-delete-container #delete {
   border-radius: 4px;
@@ -56,12 +62,24 @@ main .calculator-container .calculator .clear-delete-container #delete {
   padding: 0.5rem;
   height: 56px;
   width: 120px;
+  transition: 0.15s;
 }
-main .calculator-container .calculator .clear-delete-container #clear {
-  background-color: #5AA8CA;
+main .calculator-container .calculator .clear-delete-container #clear:hover,
+main .calculator-container .calculator .clear-delete-container #delete:hover {
+  cursor: pointer;
 }
-main .calculator-container .calculator .clear-delete-container #delete {
-  background-color: #D21B47;
+main .calculator-container .calculator .clear-delete-container #clear:hover {
+  background-color: #1b88b7;
+  color: black;
+}
+main .calculator-container .calculator .clear-delete-container #delete:hover {
+  background-color: #881631;
+  color: black;
+}
+main .calculator-container .calculator .clear-delete-container #clear:active,
+main .calculator-container .calculator .clear-delete-container #delete:active {
+  height: 50px;
+  width: 110px;
 }
 main .calculator-container .calculator .number-operator-container {
   margin-top: 10px;
@@ -77,4 +95,13 @@ main .calculator-container .calculator .number-operator-container button {
   border-radius: 5px;
   font-family: "Inter", sans-serif;
   font-size: 20px;
+  transition: 0.15s;
+}
+main .calculator-container .calculator .number-operator-container button:hover {
+  background-color: #787878;
+  cursor: pointer;
+  color: black;
+}
+main .calculator-container .calculator .number-operator-container button:active {
+  color: red;
 }/*# sourceMappingURL=style.css.map */
