@@ -1,4 +1,5 @@
 const input = document.querySelector("#input");
+let del = false;
 
 function operation (equation, operator) {
     let firstNumber = '';
@@ -24,6 +25,24 @@ function operation (equation, operator) {
     }
 }
 
+
+function runOperation() {
+    const finalOutput = document.querySelector("#final-output");
+    let equation = input.innerText;
+    finalOutput.textContent = equation;
+    let lastItem = equation.length - 1;
+    let newEquation = equation.slice(0, lastItem);
+
+    if (newEquation.includes("+")) {
+        add(newEquation);
+    }else if (newEquation.includes("-")) {
+        subtract(newEquation);
+    }else if (newEquation.includes("*")) {
+        multiply(newEquation);
+    }else if (newEquation.includes("/")) {
+        divide(newEquation);
+    }
+}
 
 function add (equation) {
     const result = operation(equation, '+');
@@ -56,26 +75,16 @@ function render(item) {
     }
 } 
 
-
-function runOperation() {
-    const finalOutput = document.querySelector("#final-output");
+function removeItem() {
     let equation = input.innerText;
-    finalOutput.textContent = equation;
-    let lastItem = equation.length - 1;
-    let newEquation = equation.slice(0, lastItem);
-
-    if (newEquation.includes("+")) {
-        add(newEquation);
-    }else if (newEquation.includes("-")) {
-        subtract(newEquation);
-    }else if (newEquation.includes("*")) {
-        multiply(newEquation);
-    }else if (newEquation.includes("/")) {
-        divide(newEquation);
-    }
+    let lastIndex = equation.length - 1;
+    let newEquation = equation.slice(0, lastIndex);
+    input.innerText = " ";
+    render(newEquation);
+    del = false;
 }
 
-const removeContent = () => {
+const clearContent = () => {
     const finalOutput = document.querySelector("#final-output");
     finalOutput.innerText = " ";
     input.innerText = " ";
@@ -86,7 +95,11 @@ const btns = document.querySelectorAll("button");
 const btnsArray = Array.from(btns);
 btnsArray.forEach((button) => {
     button.addEventListener("click", (e) => {
-        render(e.target.innerText);
+        if (e.target.innerText.toLowerCase() === "clear" || e.target.innerText.toLowerCase() === "delete") {
+            return // skips if the button are clear and delete
+        } else {
+            render(e.target.innerText);
+        }
     });
 });
 
@@ -95,4 +108,10 @@ const equalBtn = document.querySelector("#equal");
 equalBtn.addEventListener("click", runOperation);
 
 const clearBtn = document.querySelector("#clear");
-clearBtn.addEventListener("click", removeContent);
+clearBtn.addEventListener("click", clearContent);
+
+const deleteBtn = document.querySelector("#delete");
+deleteBtn.addEventListener("click", () => {
+    del = true;
+    removeItem();
+});
