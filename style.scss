@@ -9,12 +9,14 @@
 body {
     background-color: #F5F5F5;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 550px;
+
     .calculator-container {
         border-radius: 10px;
         height: 480px;
@@ -47,7 +49,15 @@ main {
                 justify-content: space-between;
                 padding: 8px 0px;
                 margin-top: 8px;
-            
+                
+                #clear {
+                    background-color: #5AA8CA;
+                }
+
+                #delete {
+                    background-color: #D21B47;
+                }
+
                 #clear,
                 #delete {
                     border-radius: 4px;
@@ -60,14 +70,28 @@ main {
                     padding: 0.5rem;
                     height: 56px;
                     width: 120px;
+                    transition: 0.15s;
                 }
 
-                #clear {
-                    background-color: #5AA8CA;
+                #clear:hover,
+                #delete:hover {
+                    cursor: pointer;
                 }
 
-                #delete {
-                    background-color: #D21B47;
+                #clear:hover {
+                    background-color: #1b88b7;
+                    color: black;
+                }
+
+                #delete:hover {
+                    background-color: #881631;
+                    color: black;
+                }
+
+                #clear:active,
+                #delete:active {
+                    height: 50px;
+                    width: 110px;
                 }
             }
 
@@ -85,8 +109,40 @@ main {
                     border-radius: 5px;
                     font-family: 'Inter', sans-serif;
                     font-size: 20px;
+                    transition: 0.15s;
+                }
+
+                button:hover {
+                    background-color: #787878;
+                    cursor: pointer;
+                    color: black;
+                }
+
+                button:active{
+                    color: red;
                 }
             }
         }
     }
 } 
+
+footer {
+    background-color: rgb(33, 30, 30);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    p {
+        color: rgb(228, 228, 228);
+        font-family: "Comic Neue";
+    }
+
+    a {
+        color: white;
+    }
+}
