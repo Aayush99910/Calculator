@@ -8,11 +8,14 @@
 body {
   background-color: #F5F5F5;
   height: 100vh;
+}
+
+main {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 550px;
 }
-
 main .calculator-container {
   border-radius: 10px;
   height: 480px;
@@ -104,4 +107,23 @@ main .calculator-container .calculator .number-operator-container button:hover {
 }
 main .calculator-container .calculator .number-operator-container button:active {
   color: red;
+}
+
+footer {
+  background-color: rgb(33, 30, 30);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+footer p {
+  color: rgb(228, 228, 228);
+  font-family: "Comic Neue";
+}
+footer a {
+  color: white;
 }/*# sourceMappingURL=style.css.map */
