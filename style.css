@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Inter&family=Megrim&family=Poor+Story&family=Roboto+Condensed&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #F5F5F5;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .calculator-container {
+  border-radius: 10px;
+  height: 480px;
+  width: 280px;
+  background-color: #D9D9D9;
+  padding: 18px 15px 10px 15px;
+}
+main .calculator-container .calculator {
+  height: 100%;
+  width: 100%;
+}
+main .calculator-container .calculator .output {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 8px;
+  gap: 1px;
+  height: 70px;
+  background-color: #F3F3F3;
+}
+main .calculator-container .calculator .output p {
+  font-size: 23px;
+  font-family: "Inter", sans-serif;
+}
+main .calculator-container .calculator .clear-delete-container {
+  display: flex;
+  height: 70px;
+  justify-content: space-between;
+  padding: 8px 0px;
+  margin-top: 8px;
+}
+main .calculator-container .calculator .clear-delete-container #clear,
+main .calculator-container .calculator .clear-delete-container #delete {
+  border-radius: 4px;
+  font-family: "Inter", sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+  color: white;
+  border: none;
+  text-align: center;
+  padding: 0.5rem;
+  height: 56px;
+  width: 120px;
+}
+main .calculator-container .calculator .clear-delete-container #clear {
+  background-color: #5AA8CA;
+}
+main .calculator-container .calculator .clear-delete-container #delete {
+  background-color: #D21B47;
+}
+main .calculator-container .calculator .number-operator-container {
+  margin-top: 10px;
+  height: 275px;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(4, 1fr);
+}
+main .calculator-container .calculator .number-operator-container button {
+  background-color: #000000;
+  color: rgb(235, 235, 235);
+  border: none;
+  border-radius: 5px;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+}/*# sourceMappingURL=style.css.map */
