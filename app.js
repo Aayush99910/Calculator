@@ -93,7 +93,11 @@ function divide (equation) {
 // this function renders the item when user presses on one i.e a button.
 function render(item) {
     if (input.innerText) {
-        input.innerText += " " + item;
+        if (item === "*" || item === "+" || item === "/" || item === "-") {
+            input.textContent += ` ${item} `;
+        }else {
+            input.textContent += item;
+        }
     }else {
         input.textContent = item;
     }
@@ -175,7 +179,7 @@ const equalBtn = document.querySelector("#equal");
 equalBtn.addEventListener("click", () => {
     const initialText = input.innerText;
     finalOutput.textContent = initialText;
-    input.innerText = handleEquation(input.innerText);
+    input.textContent = handleEquation(input.innerText);
 });
 
 
