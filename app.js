@@ -94,7 +94,14 @@ function divide (equation) {
 function render(item) {
     if (input.innerText) {
         if (item === "*" || item === "+" || item === "/" || item === "-") {
-            input.textContent += ` ${item} `;
+            if ((input.innerText[input.innerText.length - 1] === "*" && (item === "*" || item === "-" || item ==="+" || item === "/" )) 
+                || (input.innerText[input.innerText.length - 1] === "+" && (item === "+" || item === "*" || item === "-" || item ==="/"))
+                || (input.innerText[input.innerText.length - 1] === "-" && (item === "-" || item === "*" || item === "/" || item ==="+")) 
+                || (input.innerText[input.innerText.length - 1] === "/" && (item === "/" || item === "*" || item === "-" || item ==="+"))) {
+                return;
+            }else{
+                input.textContent += ` ${item} `;
+            }
         }else {
             input.textContent += item;
         }
