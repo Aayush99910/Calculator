@@ -201,3 +201,38 @@ deleteBtn.addEventListener("click", () => {
     del = true;
     removeItem();
 });
+
+
+// keyboard support
+document.addEventListener("keypress", (e) => {
+    const array = [
+        "+", "-", "/", "*", "0", "1", "2", "3", "4",
+        "5", "6", "7", "8", "9", "Enter", "c", "C", "D",
+        "d"
+    ];
+
+
+    function checkIfInArray() {
+        for (let i = 0; i < array.length; i++) {
+            if (e.key === array[i]) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    if (checkIfInArray()) {
+        if (e.key.toLowerCase() === "enter") {
+            const initialText = input.innerText;
+            finalOutput.textContent = initialText;
+            input.textContent = handleEquation(input.innerText);
+        }else if (e.key.toLowerCase() === "c") {
+            clearContent();
+        }else if (e.key.toLowerCase() === "d") {
+            del = true;
+            removeItem();
+        }else{
+            render(e.key);
+        }
+    }
+});
